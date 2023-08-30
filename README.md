@@ -1,4 +1,4 @@
-# clean_architecture_flutter
+# FLUTTER CLEAN ARCHITECTURE
 
 A new Flutter project.
 

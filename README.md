@@ -1,17 +1,52 @@
 # FLUTTER CLEAN ARCHITECTURE
+Belajar memahami clean architecture 
 
-A new Flutter project.
+```bash
+-------------------------------------
+           |    Page --- Widget      ^
+ PRESENTER |    State Management     |
+           |           |             |
+-----------| ------ Use Case         |
+           |           |             |
+   DOMAIN  |        Entity           |
+           |           |         Call FLow
+------------------Repositories       |
+           |      |         |        |
+           |    Model     Model      |
+   DATA    |      |         |        |
+           |   Remote      Local     |
+           |    Data       Data      |
+           |   Source     Source     |
+--------------------------------------
+```
 
-## Getting Started
+## Folder Structure
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# flutter_clean_architecture
+```bash
+├── config
+│   ├── routes
+│   └── theme
+├── core
+│   ├── constants
+│   ├── network
+│   ├── resources
+│   ├── usecases
+│   └── utils
+├── features
+│   └── auth
+│       ├── data
+│       │   ├── data_sources
+│       │   │   └── remote
+│       │   │   └── local
+│       │   ├── models
+│       │   └── repository
+│       ├── domain
+│       │   ├── entities
+│       │   ├── repository
+│       │   └── usecases
+│       └── presentation
+│           ├── bloc
+│           ├── pages
+│           └── widgets
+└── main.dart
+```

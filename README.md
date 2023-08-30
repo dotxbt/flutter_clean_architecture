@@ -1,7 +1,7 @@
 # FLUTTER CLEAN ARCHITECTURE
 Belajar memahami clean architecture 
 
-```bash
+```javascript
 -------------------------------------
            |    Page --- Widget      ^
  PRESENTER |    State Management     |
@@ -22,7 +22,8 @@ Belajar memahami clean architecture
 
 ## Folder Structure
 
-```bash
+```javascript
+lib
 ├── config
 │   ├── routes
 │   └── theme
@@ -44,7 +45,7 @@ Belajar memahami clean architecture
 │       │   ├── entities
 │       │   ├── repository
 │       │   └── usecases
-│       └── presentation
+│       └── presenter
 │           ├── bloc
 │           ├── pages
 │           └── widgets

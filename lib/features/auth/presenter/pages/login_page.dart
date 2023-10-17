@@ -1,5 +1,6 @@
-import 'package:clean_architecture_flutter/features/auth/presenter/widgets/social_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:unlee/features/auth/presenter/widgets/social_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -15,31 +16,19 @@ class LoginPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
-              child: Flex(
-                direction: Axis.vertical,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Image.network(
-                      "https://refactoring.guru/images/content-public/logos/logo-new.png?id=97d554614702483f31e38b32e82d8e34",
-                      width: 300,
-                      height: 300,
-                      cacheHeight: 400,
-                      cacheWidth: 400,
-                      fit: BoxFit.contain,
-                    ),
+              flex: 1,
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: SvgPicture.asset(
+                    Theme.of(context).brightness == Brightness.light
+                        ? "lib/core/resources/vector/logo_tagline.svg"
+                        : "lib/core/resources/vector/logo_tagline_dark.svg",
+                    width: 160,
+                    height: 160,
+                    fit: BoxFit.contain,
                   ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Flexible(
-                    child: Text(
-                      "Clean Architecture",
-                      style: Theme.of(context).textTheme.headlineLarge,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             SafeArea(
@@ -104,8 +93,15 @@ class LoginPage extends StatelessWidget {
                       height: 20,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: const Text("Sign in"),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/home");
+                      },
+                      child: const Text(
+                        "Sign in",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                   ],
                 ),

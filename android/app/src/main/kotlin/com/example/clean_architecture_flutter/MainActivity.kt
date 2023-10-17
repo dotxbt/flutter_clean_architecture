@@ -1,4 +1,4 @@
-package com.example.clean_architecture_flutter
+package com.example.unlee
 
 import io.flutter.embedding.android.FlutterActivity
 
